@@ -2,6 +2,9 @@
 
 WebRTC Project Server is a Node.js project that serves as a basic implementation of WebRTC technology. The project is intended to serve as a good practice example of how to set up a WebRTC project using Node.js, simple-peer, and socket.io.
 
+This is the Frontend repository:
+_[WebRTC - frontend side](https://github.com/gerry9009/webrtc)_
+
 ## Features
 
 - WebRTC peer-to-peer communication
