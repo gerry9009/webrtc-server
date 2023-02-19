@@ -31,6 +31,14 @@ io.on("connection", (socket) => {
   // 4-send socket id to the client
   socket.emit("connected", socket.id);
 
+  socket.on("disconnect", () => {
+    console.log(`Socket ${socket.id} disconnected`);
+  });
+
+  socket.on("disconnected", (otherUser) => {
+    io.to(otherUser.socketID).emit("connectionLost");
+  });
+
   // 8-get caller user calling and send to called user data
   socket.on("callOtherUser", (calledUserID, user, peerSignal) => {
     io.to(calledUserID).emit("receiveCall", user, peerSignal);
